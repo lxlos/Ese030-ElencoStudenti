@@ -1,19 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define MAX_STRLEN 30
+#define N 3
 
-// Definisci le costanti
-
-// Definisci il tipo di dato struct s_studente
-
-// Definisci studente come struct s_studente
+struct s_studente {
+    char nome [MAX_STRLEN];
+    char cognome [MAX_STRLEN];
+    unsigned int eta;
+    char classe[MAX_STRLEN];
+};
+typedef struct s_studente studente;
 
 int main(int argc, char** argv) {
-    // Dichiara le variabili locali
-    
-    // Codice per l'inserimento, da parte dell'utente, dei dati
-    
-    // Codice per la stampa dei dati (uno studente per riga)
-    
-    return (EXIT_SUCCESS);
+    int i;
+    studente elenco[N];
+    i=0;
+    while(i<N) {
+        printf("Inserire il %d° nome: ",i+1);
+        scanf("%s", (elenco[i].nome));
+        printf("Inserire il %d° cognome: ",i+1);
+        scanf("%s", (elenco[i].cognome));
+        printf("Inserire la %da eta: ",i+1);
+        scanf("%d", &(elenco[i].eta));
+        printf("Inserire la %da classe: ",i+1);
+        scanf("%s", (elenco[i].classe));
+        i=i+1;
+    }
+    i=0;
+    while (i<N) {
+     printf("%s; %s; %d; %s\n", elenco[i].nome,elenco[i].cognome,elenco[i].eta,elenco[i].classe);
+     i=i+1;
+     }
+     return (EXIT_SUCCESS);
 }
-
